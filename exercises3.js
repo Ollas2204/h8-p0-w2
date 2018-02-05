@@ -1,5 +1,4 @@
 var nama = 'Mikael';
-<<<<<<< HEAD
 var peran = 'Penyihir';
 if (nama==='')  {
 console.log("nama harus diisi!");
@@ -28,7 +27,7 @@ console.log("nama harus diisi!");
  }
  else if(nama==='' && peran==='Ksatria') {
     console.log("Selamat datang di Dunia Proxytia,"+ nama);
-    
+
  console.log("Halo Ksatria + nama +", "kamu dapat menyerang dengan senjatamu!");
   }
   else if(nama==='' && peran==='Tabib') {
