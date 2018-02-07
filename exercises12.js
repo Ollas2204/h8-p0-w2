@@ -1,10 +1,14 @@
+var menit = 60;
 function konversiMenit(menit) {
   // you can only write your code here!
+  var jam = menit/60 ;
+  var pembulatan = Math.floor(jam);
+  var minute = menit % 60;
+  var numMinute = minute;
+    var n = minute.toString();{
+      if( n < 10)
+        return pembulatan + ':'+'0' + n;
+    }
 }
-
-// TEST CASES
-console.log(konversiMenit(63)); // 1:03
-console.log(konversiMenit(124)); // 2:04
-console.log(konversiMenit(53)); // 0:53
-console.log(konversiMenit(88)); // 1:28
-console.log(konversiMenit(120)); // 2:00
+var hasilKonversi = konversiMenit(menit);
+ console.log(hasilKonversi)
