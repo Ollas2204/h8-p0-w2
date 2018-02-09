@@ -1,4 +1,4 @@
-var menit = 85;
+var menit = 65;
 function konversiMenit(menit) {
   // you can only write your code here!
   var jam = menit/60 ;
