@@ -1,6 +1,6 @@
 function pasanganTerbesar(num) {
 // you can only write your code here!
-var max = '';
+
 var simpan= [];
 for (var i = 0; i < String(num).length-1; i++) {
 //console.log(String(num)[i]+ String(num)[i+1]);
