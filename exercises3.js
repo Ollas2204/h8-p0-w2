@@ -1,5 +1,6 @@
 var nama = 'Mikael';
 var peran = 'Penyihir';
+
 if (nama==='')  {
 console.log("nama harus diisi!");
 }

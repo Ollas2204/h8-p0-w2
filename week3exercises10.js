@@ -1,16 +1,19 @@
 function perkalianUnik(arr) {
   // you can only write your code here!
-
+var k = []
   for (var i = 0; i < arr.length; i++) {
     var perkalian= 1;
     for (var j = 0; j < arr.length; j++) {
     if (i !== j) {
+
       perkalian *= arr[j]
+
     }
+
     }
-    console.log(perkalian);
+k.push(perkalian)
   }
-  //return tambah;
+  return k
 }
 
 
