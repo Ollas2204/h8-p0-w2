@@ -1,6 +1,6 @@
 function tentukanDeretAritmatika(arr) {
   // you can only write your code here!
-  let selisih = arr[1] - arr[0]
+  var selisih = arr[1] - arr[0]
   for (let i = 1; i < arr.length-1; i++) {
     if (arr[i] !== arr[i-1]+selisih) {
       return false
