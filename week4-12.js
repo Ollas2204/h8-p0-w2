@@ -1,16 +1,9 @@
-function makeObj (memberID, money) {
-  this.memberID = memberID;
-  this.money = money;
-  this.listPurchased = [];
-  this.changeMoney = 0;
-}
-/*
 var shoppingObj = {
   memberID: 'a',
   money: 0,
   listPurchased: [],
   changeMoney: 0
-};*/
+}
 
 function shoppingTime(memberId, money) {
   if (memberId === '' || (memberId === undefined && money === undefined)) {
@@ -18,37 +11,36 @@ function shoppingTime(memberId, money) {
   } else if (money < 50000) {
     return "Mohon maaf, uang tidak cukup";
   } else {
-    shoppingObj = new makeObj(memberId, money);
     shoppingObj.memberID = memberId;
     shoppingObj.money = money;
-    var canPurchase = true;
-    while (money > 0 && canPurchase) {
+    var Purchase = true;
+    while (money > 0 && Purchase) {
       if (money >= 1500000) {
         shoppingObj.listPurchased.push('Sepatu Stacattu');
         money -= 1500000;
-        canPurchase = true;
+        Purchase = true;
       }
       if (money >= 500000) {
         shoppingObj.listPurchased.push('Baju Zoro');
         money -= 500000;
-        canPurchase = true;
+        Purchase = true;
       }
       if (money >= 250000) {
         shoppingObj.listPurchased.push('Baju H&N');
         money -= 250000;
-        canPurchase = true;
+        Purchase = true;
       }
       if (money >= 175000) {
         shoppingObj.listPurchased.push('Sweater Uniklooh');
         money -= 175000;
-        canPurchase = true;
+        Purchase = true;
       }
       if (money >= 50000) {
         shoppingObj.listPurchased.push('Casing Handphone');
         money -= 50000;
-        canPurchase = true;
+        Purchase = true;
       }
-      canPurchase = false;
+      Purchase = false;
     }
     shoppingObj.changeMoney = money;
     return shoppingObj;
