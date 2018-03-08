@@ -1,11 +1,11 @@
 var nama = 'Mikael';
-var peran = 'Penyihir';
+var peran = 'Tabib';
 
 if (nama==='')  {
 console.log("nama harus diisi!");
 }
  else if (peran==='') {
- console.log("Halo" + nama + ", Pilih peranmu untuk memulai game!");
+ console.log("Halo " + nama + ", Pilih peranmu untuk memulai game!");
  }
  else if(peran==='Ksatria') {
     console.log("Selamat datang di Dunia Proxytia,"+ nama);

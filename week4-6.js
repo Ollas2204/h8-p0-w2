@@ -26,6 +26,7 @@ function hitungHuruf(kata) {
   }else{
     return -1;
   }
+}
 
 // TEST CASES
 console.log(hitungHuruf('Today, is the greatest day ever')); // greatest
