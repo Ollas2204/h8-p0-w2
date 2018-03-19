@@ -1,11 +1,11 @@
 function xo(str) {
 var countX = 0 ;
 var countO = 0 ;
- for( var index= 0; index <= str.length; index++){
-  if(str[index]=== 'x') {
+ for( var index= 0; index <= str.length-1; index++){
+  if(str[index] === 'x') {
      countX++
   }
-  else if(str[index]=== 'o') {
+  else if(str[index] === 'o') {
       countO++
   }
 }
@@ -19,4 +19,8 @@ if (countX === countO) {
 }
 
 // TEST CASES
-xo('xox'); // true
+console.log(xo('xoxoxo')); // true
+console.log(xo('oxooxo')); // false
+console.log(xo('oxo')); // false
+console.log(xo('xxxooo')); // true
+console.log(xo('xoxooxxo')); // true

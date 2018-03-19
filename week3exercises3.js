@@ -6,12 +6,15 @@ var input = [
               ["0003", "Winona", "Ambon", "25/12/1965", "Memasak"],
               ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
             ]
-  for(var i= 0; i < input.length; i+=1) {
-  }
-  console.log('Nomor Id : ' + [input[0][0]]);
-  console.log('Nama Lengkap : ' + [input[0][1]]);
-  console.log('TTL : ' + [input[0][2] + ' ' +[input[0][3]]]);
-  console.log('Hobi : ' + [input[0][4]]);
+   for(var i= 0; i < input.length; i++) {
+
+     console.log((i+1) +'. ');
+     console.log('Nomor Id : ' + [input[i][0]]);
+     console.log('Nama Lengkap : ' + [input[i][1]]);
+     console.log('TTL : ' + [input[i][2] + ' ' +[input[i][3]]]);
+     console.log('Hobi : ' + [input[i][4]]);
+
+   }
   return input
 
 }

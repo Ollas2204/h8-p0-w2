@@ -11,7 +11,7 @@ function palindrome(kata) {
   //   return false
   // }
 
-  return kata.split('').reverse().join('') === kata
+  return kata.split('').reverse().join('')=== kata
 }
 
 // TEST CASES

@@ -26,7 +26,7 @@ for(var looping = 20; looping >= 1; looping--) {
 
 //3. Angka Ganjil dan Genap
 for (var counter = 1; counter <= 100; counter++) {
-  if(counter % 2){
+  if(counter % 2 === 0){
   console.log("Genap");
   }
 else('ganjil');{
