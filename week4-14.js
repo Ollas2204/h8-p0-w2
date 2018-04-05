@@ -1,14 +1,48 @@
 function sorting(arrNumber) {
   // code di sini
+  return arrNumber.sort(function (a,b) {
+
+    return a-b
+
+  })
+
 }
 
 function getTotal(arrNumber) {
   // code di sini
+
+  let angkaTerbesar = arrNumber[0]
+  let jumlah = 0
+
+  for (var i = 0; i < arrNumber.length; i++) {
+
+    if (arrNumber[i] > angkaTerbesar) {
+
+      angkaTerbesar = arrNumber[i]
+
+    }
+
+  }
+
+  for (var j = 0; j < arrNumber.length; j++) {
+
+    if (arrNumber[j] === angkaTerbesar) {
+
+      jumlah += 1
+
+    }
+
+  }
+
+  return arrNumber.length === 0 ? '' : 'angka paling besar adalah ' +angkaTerbesar +' dan jumlah kemunculan sebanyak ' +jumlah +' kali'
+
 }
+
 
 function mostFrequentLargestNumbers(arrNumber) {
   var listSort = sorting(arrNumber);
   var countHighest = getTotal(listSort);
+
   return countHighest;
 }
 
