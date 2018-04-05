@@ -1,5 +1,10 @@
 function totalDigitRekursif(angka) {
   // you can only write your code here!
+  if (String(angka).length === 1) {
+    return angka
+  }else {
+    return +(String(angka)[0]) + totalDigitRekursif(+(String(angka).slice(1)))
+  }
 }
 
 // TEST CASES

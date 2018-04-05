@@ -1,5 +1,13 @@
 function kaliTerusRekursif(angka) {
   // you can only write your code here!
+  if (angka < 10) {
+
+    return angka
+
+  }
+
+  return kaliTerusRekursif(+(String(angka)[0]) * kaliTerusRekursif(+(String(angka).slice(1))))
+
 }
 
 // TEST CASES
