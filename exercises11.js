@@ -1,6 +1,6 @@
 function balikKata(kata) {
   // you can only write your code here!
-  var input = '';
+  
   var hasil = '';
   for ( var index = kata.length-1 ; index >= 0; index--){
     // console.log(kata[index] +" index ke - "+ index);

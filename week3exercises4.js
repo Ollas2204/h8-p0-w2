@@ -3,7 +3,7 @@ function dataHandling2() {
   var arr0 = input[0];
   var arr = input[1].split(' ');
    arr.push('Elsharawy');
-   input.splice(1, 1, arr.join(' '));
+   input.splice(1, 1 , arr.join(' '));
   var arr1 = input[2].split('');
    arr1.unshift('Provinsi ');
    input.splice(2,1, arr1.join(''));

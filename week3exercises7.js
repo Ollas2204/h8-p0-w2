@@ -21,7 +21,7 @@ function hitungJumlahKata(kalimat) {
     }
 
     return a.length;
-    
+
   }
 
 // TEST CASES
@@ -30,8 +30,7 @@ console.log(hitungJumlahKata('Never eat shredded wheat or cake')); // 6
 console.log(hitungJumlahKata('A song to sing')); // 4
 console.log(hitungJumlahKata('I')); // 1
 console.log(hitungJumlahKata('I believe I can code')); // 5
-//var name = 'Uvuvwevwevwe Onyetenyevwe Ugwemubwem Ossas';
-//console.log(name.length); // 42
+
 
 
 //   let jumlah = 1

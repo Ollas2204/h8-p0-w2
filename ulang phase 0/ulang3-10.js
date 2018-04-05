@@ -1,21 +1,21 @@
 function perkalianUnik(arr) {
-  // you can only write your code here!
-var k = []
-  for (var i = 0; i < arr.length; i++) {
-    var perkalian= 1;
-    for (var j = 0; j < arr.length; j++) {
-    if (i !== j) {
+  var k = []
+    for (var i = 0; i < arr.length; i++) {
+      //console.log(arr[i]);
+      var perkalian= 1;
+      for (var j = 0; j < arr.length; j++) {
+      if (i !== j) {
 
-      perkalian *= arr[j]
+        perkalian *= arr[j]
 
-    }
+      }
 
-    }
-k.push(perkalian)
+      }
+
+   k.push(perkalian)
+     }
+     return k
   }
-  return k
-}
-
 
 // TEST CASES
 console.log(perkalianUnik([2, 4, 6])); // [24, 12, 8]
