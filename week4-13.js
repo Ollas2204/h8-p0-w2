@@ -1,43 +1,34 @@
-function penjualan (nama_produk,leftOver) {
-  this.product = nama_produk;
-  this.shoppers = [];
-  this.leftOver = leftOver;
-  this.totalProfit = 0;
-}
-
 function countProfit(shoppers) {
   let listBarang = [ ['Sepatu Stacattu', 1500000, 10],
                      ['Baju Zoro', 500000, 2],
-                     ['Sweater Uniklooh', 175000, 1]
+                     ['Sweater Uniklooh', 175000, 1],
                    ];
-  sepatu = new penjualan(listBarang[0][0], listBarang[0][2]);
-  baju = new penjualan(listBarang[1][0], listBarang[1][2]);
-  sweater = new penjualan(listBarang[2][0], listBarang[2][2]);
-  for (var i = 0; i < shoppers.length; i++) {
-    if (shoppers[i].product === listBarang[0][0]) {
-      if (shoppers[i].amount <= sepatu.leftOver) {
-        sepatu.shoppers.push(shoppers[i].name);
-        sepatu.leftOver -= shoppers[i].amount;
-        sepatu.totalProfit += shoppers[i].amount * listBarang[0][1];
-      }
-    }
-    if (shoppers[i].product === listBarang[1][0]) {
-      if (shoppers[i].amount <= baju.leftOver) {
-        baju.shoppers.push(shoppers[i].name);
-        baju.leftOver -= shoppers[i].amount;
-        baju.totalProfit += shoppers[i].amount * listBarang[1][1];
-      }
-    }
-    if (shoppers[i].product === listBarang[2][0]) {
-      if (shoppers[i].amount <= sweater.leftOver) {
-        sweater.shoppers.push(shoppers[i].name);
-        sweater.leftOver -= shoppers[i].amount;
-        sweater.totalProfit += shoppers[i].amount * listBarang[2][1];
+  var arr = []
+
+  if (shoppers.length === 0) {
+    return arr
+  }
+
+  for (var i = 0; i < listBarang.length; i++) {
+    var obj = {}
+    obj.product = listBarang[i][0]
+    obj.shoppers = []
+    obj.leftOver = listBarang[i][2]
+    obj.totalProfit = 0
+    arr.push(obj)
+  }
+
+  for (var j = 0; j < shoppers.length; j++) {
+    for(var k = 0; k < listBarang.length; k++){
+      if (shoppers[j].product === listBarang[k][0] && arr[k].leftOver >= shoppers[j].amount) {
+        arr[k].shoppers.push(shoppers[j].name)
+        arr[k].leftOver -= shoppers[j].amount
+        arr[k].totalProfit += (listBarang[k][1] * shoppers[j].amount)
       }
     }
   }
-  var daftar_penjualan = {sepatu, baju, sweater};
-  return daftar_penjualan;
+
+  return arr;
 }
 
 // TEST CASES
@@ -55,7 +46,7 @@ console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 2},
 //   leftOver: 1,
 //   totalProfit: 0 } ]
 
-console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8}, {name: 'Vanessa', product: 'Sepatu Stacattu', amount: 10}, {name: 'Rani', product: 'Sweater Uniklooh', amount: 1}, {name: 'Devi', product: 'Baju Zoro', amount: 1}, {name: 'Lisa', product: 'Baju Zoro', amount: 1}]));
+// console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8}, {name: 'Vanessa', product: 'Sepatu Stacattu', amount: 10}, {name: 'Rani', product: 'Sweater Uniklooh', amount: 1}, {name: 'Devi', product: 'Baju Zoro', amount: 1}, {name: 'Lisa', product: 'Baju Zoro', amount: 1}]));
 // [ { product: 'Sepatu Stacattu',
 //     shoppers: [ 'Windi' ],
 //     leftOver: 2,
@@ -68,7 +59,7 @@ console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 8},
 //     shoppers: [ 'Rani' ],
 //     leftOver: 0,
 //     totalProfit: 175000 } ]
-console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
+// console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
 // [ { product: 'Sepatu Stacattu',
 //     shoppers: [],
 //     leftOver: 10,
@@ -81,4 +72,4 @@ console.log(countProfit([{name: 'Windi', product: 'Sepatu Naiki', amount: 5}]));
 //     shoppers: [],
 //     leftOver: 1,
 //     totalProfit: 0 } ]
-console.log(countProfit([])); //[]
+// console.log(countProfit([])); //[]
