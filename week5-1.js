@@ -1,24 +1,17 @@
 function deepSum (arr) {
   // Code disini
-
-  let hasil = 0
-
-  for (var i = 0; i < arr.length; i++) {
-
-    for (var j = 0; j < arr[i].length; j++) {
-
-      for (var k = 0; k < arr[i][j].length; k++) {
-
-        hasil += arr[i][j][k]
-
-      }
-
-    }
-
-  }
-
-  return arr.length === 0 ? 'No number' : hasil
-
+  if(arr[0] === undefined){
+       return 'No Number';
+   }
+   var tmp =0;
+   for(var i=0; i< arr.length;i++){
+       for(var j =0; j < arr[i].length;j++){
+           for(var k=0; k<arr[i][j].length; k++){
+               tmp += arr[i][j][k]
+           }
+       }
+   }
+    return tmp;
 }
 
 //TEST CASE
