@@ -1,47 +1,32 @@
 function highestScore(students) {
 	// Code disini
-	var kelas = [];
-	for (var i = 0; i < students.length; i++) {
-		kelas.push(students[i].class);
-	}
+  var result = {}
 
-	var filteredKelas = [];
-	for (var j = 0; j < kelas.length; j++) {
-		var current = kelas[j];
-		if (filteredKelas.indexOf(current) < 0) filteredKelas.push(current);
-	}
+  for (var i = 0; i < students.length; i++) {
 
-	var result = [];
-	var daftar = [];
-	for (var k = 0; k < filteredKelas.length; k++) {
-		for (var l = 0; l < students.length; l++) {
-			var tampung = [];
-			if (filteredKelas[k] === students[l].class) {
-				tampung.push(students[l].score);
-				tampung.push(students[l].name);
-				tampung.push(students[l].class);
-				daftar.push(tampung);
-			}
-		}
-		var tmp;
-		for (var i = 0; i < daftar.length; i++) {
-			for (var j = 0; j > daftar.length; j++) {
-				if (daftar[i][0] < daftar[j][0]) {
-					tmp = daftar[m];
-					daftar[i] = daftar[j];
-					daftar[j] = tmp;
-				}
-			}
-		}
-		var obj = {};
-		obj[daftar[0][2]] = {
-			name: daftar[0][1],
-			score: daftar[0][0],
-		};
-		daftar = [];
-		result.push(obj);
-	}
-	return result;
+    var student = {
+      name: students[i].name,
+      score: students[i].score,
+    }
+
+    if (result[students[i].class]) {
+
+      if (result[students[i].class].score < student.score) {
+
+        result[students[i].class] = student;
+
+      }
+
+    } else {
+
+      result[students[i].class] = student;
+
+    }
+
+  }
+
+  return result;
+
 }
 
 // TEST CASE

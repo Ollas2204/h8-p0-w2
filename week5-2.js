@@ -27,6 +27,7 @@ function naikAngkot(arrPenumpang) {
       }
     return result;
 
+
 }
 
 //TEST CASE
